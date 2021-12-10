@@ -64,7 +64,7 @@ class ParkingTimeCreateSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         for parking_time in ParkingTime.objects.filter(parking_place_id=validated_data['parking_place_id']):
 
-            time = parking_time.time
+            time = parking_time.time_time
             duration = parking_time.duration
             if time <= validated_data['time_time'] < time + duration or validated_data['time_time'] < time and validated_data[
                 'time_time'] + validated_data['duration'] > time:
