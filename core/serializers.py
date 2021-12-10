@@ -59,15 +59,15 @@ class ParkingTimeCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ParkingTime
-        fields = ('time', 'duration', 'parking_place_id')
+        fields = ('time_time', 'duration', 'parking_place_id')
 
     def create(self, validated_data):
         for parking_time in ParkingTime.objects.filter(parking_place_id=validated_data['parking_place_id']):
 
             time = parking_time.time
             duration = parking_time.duration
-            if time <= validated_data['time'] < time + duration or validated_data['time'] < time and validated_data[
-                'time'] + validated_data['duration'] > time:
+            if time <= validated_data['time_time'] < time + duration or validated_data['time_time'] < time and validated_data[
+                'time_time'] + validated_data['duration'] > time:
                 raise ValueError('Cannot set time')
         return ParkingTime.objects.create(**validated_data)
 
