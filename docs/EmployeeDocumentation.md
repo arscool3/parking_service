@@ -116,7 +116,7 @@
 
    **Обязательно:**
  
-   `time=[int] - конкретный час этого дня`
+   `time_time=[int] - конкретный час этого дня`
    `duration=[int] - продолжительность бронирования`
    `parking_place_id=[int] - идентификатор места`
 
@@ -124,7 +124,7 @@
 * **Ответ**
 
   * **Code:** 200 <br />
-    **Content:** `{ 'time' : 'int', 'duration' : 'int' , 'parking_place_id' : 'int'}`
+    **Content:** `{ 'time_time' : 'int', 'duration' : 'int' , 'parking_place_id' : 'int'}`
 
 **Просмотр своих броней**
 ----

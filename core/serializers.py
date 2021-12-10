@@ -52,7 +52,7 @@ class ParkingTimeSerializer(serializers.ModelSerializer):
 
 
 class ParkingTimeCreateSerializer(serializers.ModelSerializer):
-    time = serializers.IntegerField(required=True)
+    time_time = serializers.IntegerField(required=True)
     duration = serializers.IntegerField(required=True)
     parking_place_id = serializers.IntegerField(required=True)
 
